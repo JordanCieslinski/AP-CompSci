@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=TextComponentFrame
+comment1.params=
+comment1.target=TextComponentFrame()
+comment2.params=event
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=str
+comment3.target=boolean\ checkName(java.lang.String)
+comment4.params=str
+comment4.target=boolean\ checkPassword(java.lang.String)
+comment5.params=str
+comment5.target=boolean\ checkEmail(java.lang.String)
+comment6.params=str
+comment6.target=boolean\ checkZip(java.lang.String)
+comment7.params=str
+comment7.target=boolean\ checkYear(java.lang.String)
+comment8.params=str
+comment8.target=boolean\ checkPhone(java.lang.String)
+numComments=9

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Magpie
+comment1.params=
+comment1.target=java.lang.String\ getGreeting()
+comment1.text=\r\n\ @return\ a\ simple\ response\ to\ get\ a\ conversation\ going,\ (i.e.\ "Top\ of\ the\ morning\ lad,\ do\ you\ want\ to\ have\ a\ conversation?")\r\n
+comment2.params=statement
+comment2.target=java.lang.String\ getResponse(java.lang.String)
+comment2.text=\r\n\ Gives\ a\ response\ to\ a\ user\ statement,\ the\ response\ should\ meet\ the\ following\ 3\ conditions\:\r\n\ 1)\ If\ the\ statement\ contains\ "no"\ the\ response\ should\ be\ "Why\ so\ negative".\r\n\ 2)\ If\ the\ statement\ contains\ "mother",\ "brother",\ "sister",\ "father"\ the\ response\ should\ be\ "Tell\ me\ more\ about\ your\ family"\r\n\ 3)\ If\ the\ statement\ doesn't\ meet\ conditions\ 1\ and\ 2\ the\ response\ calls\ the\ getRandomResponse()\ method\ to\ obtain\ a\ random\ response.\r\n\ \r\n\ @param\ statement\:\ the\ user\ entered\ statement\r\n\ \r\n\ @return\ a\ response\ based\ on\ the\ rules\ given\r\n
+comment3.params=
+comment3.target=java.lang.String\ getRandomResponse()
+comment3.text=\r\n\ Creates\ a\ random\ response\ (i.e.\ "Interesting,\ tell\ me\ more"\ or\ "Hmmmmm...")\r\n\ Must\ contain\ at\ least\ 4\ random\ responses\ to\ choose\ from\r\n\ @return\ a\ String\r\n
+numComments=4
