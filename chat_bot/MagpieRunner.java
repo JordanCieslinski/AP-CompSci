@@ -14,9 +14,13 @@ public class MagpieRunner
         System.out.println(answer.getGreeting());
         
         String in = console.nextLine();
-        while(in.indexOf("bye") != -1)
+        while(in.indexOf("bye") == -1)
         {
-            System.out.println(answer.getResponse(in));
+            if(in.equals(""))
+                System.out.println("Please say something");
+            else
+                System.out.println(answer.getResponse(in));
+            
             in = console.nextLine();
         }
     }
