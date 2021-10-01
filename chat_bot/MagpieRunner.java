@@ -16,9 +16,6 @@ public class MagpieRunner
         String in = console.nextLine();
         while(in.indexOf("bye") == -1)
         {
-            if(in.equals(""))
-                System.out.println("Please say something");
-            else
                 System.out.println(answer.getResponse(in));
             
             in = console.nextLine();

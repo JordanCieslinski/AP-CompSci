@@ -20,26 +20,53 @@ public class Magpie
      */
     public String getResponse(String statement)
     {
+
+        
+
         String state = statement.toLowerCase();
 
-        if(findKeyword(state, "no") != -1)
-            return "Why so negative?";
-        else if(findKeyword(state, "father") != -1 || findKeyword(state, "mother") != -1 || findKeyword(state, "brother") != -1 ||findKeyword(state, "sister") != -1)
+        for(int i = 0; i < statement.length();i++)
         {
-            return "Tell me more about your family";
-        }
-        else if(findKeyword(state, "math") != -1)
-            return "So, are you taking a math course?";
-        else if(findKeyword(state, "hit") != -1)
-            return "I don't like violence. Let's change the subject";
-        else if(findKeyword(state, "wuest") != -1)
-            return "I hear he is one swell guy";
-        else if(findKeyword(state, "pizza") != -1)
-            return "I've never had pizza before. I've never eaten anything.";
-        else if(findKeyword(state, "baseball") != -1)
-            return "I like baseball! GO YANKEES!";
+            if(statement.length() < 2)
+            {
+                System.out.println("Please say something");
 
-        return getRandomResponse();
+            }
+            else if(findKeyword(state, "i want to") != -1)
+            {
+                return transformIWantToStatement(statement); 
+            }
+            else if(findKeyword(state, "no") != -1)
+            {
+                return "Why so negative?"; 
+            }
+            else if(findKeyword(state, "father") != -1 || findKeyword(state, "mother") != -1 || findKeyword(state, "brother") != -1 ||findKeyword(state, "sister") != -1)
+            {
+                return "Tell me more about your family";
+            }
+            else if(findKeyword(state, "math") != -1)
+            {
+                return "So, are you taking a math course?";
+            }
+            else if(findKeyword(state, "hit") != -1)
+            {
+                return "I don't like violence. Let's change the subject";
+            }
+            else if(findKeyword(state, "wuest") != -1)
+            {
+                return "I hear he is one swell guy";
+            }
+            else if(findKeyword(state, "pizza") != -1)
+            {
+                return "I've never had pizza before. I've never eaten anything.";
+            }
+            else if(findKeyword(state, "baseball") != -1)
+            {
+                return "I like baseball! GO YANKEES!";
+            }
+                
+            }
+            return getRandomResponse();
     }
 
     /**
@@ -67,16 +94,45 @@ public class Magpie
      */
     public int findKeyword(String statement, String goal)
     {
-        int pos = statement.indexOf(goal);
-        int length = goal.length();
-        if(statement.equals(goal))
-            return pos;
-        else if((statement.charAt(pos-1) != (' ')) && (pos+length != statement.length()))
+        int pos = statement.indexOf(goal); 
+        int length = goal.length(); 
+
+        if(statement.length() < length)
             return -1;
-        else if(((statement.length()-length) != pos) && (statement.charAt(pos-1) != (' ')))
-            return -1;
+        else if(statement.equals(goal))
+        {
             return pos;
+        }
+        else if(pos == 0)
+        {
+                if(statement.charAt(pos+length) == ' ')
+                    return pos;
+
+                return -1;
+        }
+        else if(statement.indexOf(goal) == statement.length() - length)
+        {
+            if(statement.charAt(pos-1) == ' ')
+                return pos;
+            return -1;
+        }
+            return -1;
+            
         
 
     }
+    /**
+    * Take a statement with "I want to <something>." and transform it into
+    * "What would it mean to <something>?"
+    *
+    * @param statement the user statement, assumed to contain "I want to"
+    *
+    * @return the transformed statement
+    */
+    public String transformIWantToStatement(String statement)
+    {
+        int endPos = statement.indexOf("i want to") + "i want to".length();
+        return "What does it mean to "+statement.substring(endPos + 2) + "?";
+    }
+
 }
