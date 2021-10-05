@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=ThisStringIsOnFire
-comment1.params=str
-comment1.target=int\ maxBlock(java.lang.String)
-comment1.text=\r\n\ Given\ a\ string,\ return\ the\ length\ of\ the\ largest\ "block"\ in\ the\ string.\ \r\n\ A\ block\ is\ a\ run\ of\ adjacent\ characters\ that\ are\ the\ same.\ \ For\ example,\r\n\ maxBlock("soccer")\ would\ return\ 2,\ whereas\ maxBlock("family")\ would\ return\ 1.\r\n\ In\ addition,\ maxBlock("")\ would\ return\ 0.\r\n
-comment2.params=args
-comment2.target=void\ main(java.lang.String[])
-numComments=3
