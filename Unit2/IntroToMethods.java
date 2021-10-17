@@ -3,8 +3,12 @@ import java.util.Arrays;
 public class IntroToMethods {
     
     public static void main(String[] args){
-        System.out.println(removeYak("yakbak"));
-
+        System.out.println(isEven(7));
+        System.out.println(minimum3(.3, .8, .1));
+        System.out.println(removeYak("yakpak"));
+        System.out.println(multipleOfThree(31));
+        System.out.println(numToWord("I have 54 iPhones"));
+        System.out.println(sdrawkcab("racecar"));
 
 
     }
@@ -29,9 +33,11 @@ public class IntroToMethods {
 
      //5
      public static String removeYak(String str){
-        str.replaceAll("yak", " ");
+
+        str = str.replaceAll("yak", "");
         return str;
      }
+
 
      //7
      public static boolean multipleOfThree(int num) {
@@ -42,36 +48,17 @@ public class IntroToMethods {
 
      //9
      public static String numToWord(String str) {
-         String temp = "";
-         String word= "";
-         
-         for(int i = 0; i <=9; i++){
-            switch(i){
-                case(0):
-                    word = "zero";
-                case(1):
-                    word = "one";
-                case(2):
-                    word = "two";
-                case(3):
-                    word = "three";
-                case(4):
-                    word = "four";
-                case(5):
-                    word = "five";
-                case(6):
-                    word = "six";
-                case(7):
-                    word = "seven";
-                case(8):
-                    word = "eight";
-                case(9):
-                    word = "nine";
-            }
-            temp = i +"";
-            str.replaceAll(temp, word);
-            
-         }
+
+            str = str.replaceAll("0", "zero");
+            str = str.replaceAll("1", "one");
+            str = str.replaceAll("2", "two");
+            str = str.replaceAll("3", "three");
+            str = str.replaceAll("4", "four");
+            str = str.replaceAll("5", "five");
+            str = str.replaceAll("6", "six");
+            str = str.replaceAll("7", "seven");
+            str = str.replaceAll("8", "eight");
+            str = str.replaceAll("9", "nine");
          return str;
          
      }
