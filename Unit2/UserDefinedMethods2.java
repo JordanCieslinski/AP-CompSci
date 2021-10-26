@@ -1,7 +1,7 @@
 public class UserDefinedMethods2 {
     public static void main(String [] args){
 
-        System.out.println(last3Upper("hello"));
+        System.out.println(getCode("cope code co3e"));
     }
 
     public static String firstTwo(String str){
