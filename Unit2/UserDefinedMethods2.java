@@ -1,7 +1,7 @@
 public class UserDefinedMethods2 {
     public static void main(String [] args){
 
-        System.out.println(getCode("code cope"));
+        System.out.println(last3Upper("hello"));
     }
 
     public static String firstTwo(String str){
@@ -63,15 +63,30 @@ public class UserDefinedMethods2 {
 
     public static int getCode(String str){
         int count = 0;
-        if((str.charAt(str.indexOf("co")) + 3 == 'e')){
-
-        str = str.replaceAll(str.charAt(str.indexOf("co") + 2)+"", "d");
-        while(str.indexOf("code") !=-1)
-            str = str.replace((str.substring((str.indexOf("code")), str.indexOf(("code")+4))) ,"");
-            count++;
+        str = " "+str+" "; 
+        while(true){
+            if(((str.charAt(str.indexOf("co") + 3)) == 'e')){
+                count++;
+                str = str.replaceAll(str.substring(str.indexOf("co"), (str.indexOf("co") + 4)) ,"");
+            
+            }
+            else
+                break;
         }
         return count;
+    
     }
 
+    public static String last3Upper(String str){
+        if(str.length() < 3)
+            return str;
+        else{
+            for(int i  = 0; i < str.length() - 3; i++){
+                Character.toLowerCase(str.charAt(i)) +"";
+            }
+
+        }
+        return str;
+    }
     }
 
