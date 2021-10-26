@@ -76,17 +76,18 @@ public class UserDefinedMethods2 {
         return count;
     
     }
-
+//hello
     public static String last3Upper(String str){
-        if(str.length() < 3)
-            return str;
-        else{
-            for(int i  = 0; i < str.length() - 3; i++){
-                Character.toLowerCase(str.charAt(i)) +"";
-            }
 
-        }
-        return str;
+        int pos1 = str.length() - 3;
+        String str1 = str.substring(pos1);
+
+        String str2 = str.substring(0, pos1);
+
+        str1 = str1.toUpperCase();
+        
+
+        return str2 + str1;
     }
     }
 
