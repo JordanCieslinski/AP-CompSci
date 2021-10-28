@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class UserDefinedMethods3 {
     public static void main(String[] args){
-        System.out.println(stringAdditionChallenge("4+4"));
+        System.out.println(stringAddition("4+4"));
     
     }
     public static String isToOnes(String str){
