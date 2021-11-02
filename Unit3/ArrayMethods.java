@@ -2,8 +2,8 @@ import java.util.*;
 
 public class ArrayMethods {
     public static void main(String [] args){
-        String [] arr = {"Hello","Hey","Hi"};
-        System.out.println(findLongestWord(arr));
+        int [] arr = {3, 4, 3, 3, 4};
+        System.out.println(haveThree(arr));
     }
     public static int lastIndexOf(int[] arr , int x){
         int loc = arr.length-1;
@@ -51,6 +51,46 @@ public class ArrayMethods {
         }
         return arr[pos];
     }
+    public static int mostVowels(String [] arr){
+        int count = 0;
+        int max = 0;
+        for(int i = 0; i < arr.length; i++){
+
+            for(int j = 0; j < arr[i].length(); j++){
+                if(arr[i].charAt(j) == 'a' || arr[i].charAt(j) == 'e' || arr[i].charAt(j) == 'i' || arr[i].charAt(j) == 'o' || arr[i].charAt(j) == 'u')
+                    count++;
+            }
+            if (count > max){
+                max = count;
+                count = 0;
+            }
+        }
+        return max;
+    }
+    public static int [] changeNumber(int [] numbersArray , int changeFrom, int changeTo){
+
+        for(int i = 0; i < numbersArray.length; i++){
+            if(numbersArray[i] == changeFrom)
+                numbersArray[i] = changeTo;
+        }
+        return numbersArray;
+    }
+    public static boolean haveThree(int [] arr){
+        boolean valid = true;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] == 3){
+                if(i == 0 && arr[i+1] == 3)
+                    valid = false;
+                else if(i == arr.length-1 && arr[i-1] ==3)
+                    valid = false;
+                else if((i != 0 && i != arr.length-1) && (arr[i-1] == 3 || arr[i+1] == 3))
+                    valid = false;
+            }
+            
+        }
+        return valid;
+    }
+    public static String [] wordsRemoved()
 
 
 
