@@ -3,7 +3,7 @@ import java.util.*;
 public class ArrayMethods {
     public static void main(String [] args){
         String [] arr = {"a", "bb", "b", "ccc"};
-        System.out.println(Arrays.toString(wordsRemoved(arr, 1)));
+        System.out.println(Arrays.toString(wordsRemoved(arr, 4)));
     }
     public static int lastIndexOf(int[] arr , int x){
         int loc = arr.length-1;
@@ -96,16 +96,27 @@ public class ArrayMethods {
 
             if(str[i].length() == num){
                 count++;
-                str[i] = str[i].replaceAll(str[i],"");
+                str[i] = "";
+                System.out.println(Arrays.toString(str));
             }
         }
-        String [] temp = new String[str.length - count];
+        String [] temp = new String[str.length-count];
+        System.out.println(Arrays.toString(temp));
+
         for(int i = 0; i < temp.length; i++){
 
-            if(!str[i].equals("")){
-                temp[i] = str[i];
-            }
+            for(int j = 0; j < str.length; j++){
+
+                if(!str[j].equals("")){
+                    temp[i] = str[j];
+                    if(temp[i] != null){
+                        str[j] = "";
+                        break;
+                    }
+                }
         }
+        }
+        
         return temp;
     }
 
