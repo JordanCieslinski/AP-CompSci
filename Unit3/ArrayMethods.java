@@ -2,8 +2,8 @@ import java.util.*;
 
 public class ArrayMethods {
     public static void main(String [] args){
-        int [] arr = {3, 4, 3, 3, 4};
-        System.out.println(haveThree(arr));
+        String [] arr = {"a", "bb", "b", "ccc"};
+        System.out.println(Arrays.toString(wordsRemoved(arr, 1)));
     }
     public static int lastIndexOf(int[] arr , int x){
         int loc = arr.length-1;
@@ -90,7 +90,24 @@ public class ArrayMethods {
         }
         return valid;
     }
-    public static String [] wordsRemoved()
+    public static String [] wordsRemoved(String [] str, int num){
+        int count = 0;
+        for(int i = 0; i < str.length; i++){
+
+            if(str[i].length() == num){
+                count++;
+                str[i] = str[i].replaceAll(str[i],"");
+            }
+        }
+        String [] temp = new String[str.length - count];
+        for(int i = 0; i < temp.length; i++){
+
+            if(!str[i].equals("")){
+                temp[i] = str[i];
+            }
+        }
+        return temp;
+    }
 
 
 
