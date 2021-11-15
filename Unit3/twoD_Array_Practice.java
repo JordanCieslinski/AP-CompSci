@@ -1,25 +1,13 @@
 import java.util.*;
 public class twoD_Array_Practice {
     public static void main(String[] args) {
-        int[][] arr = {
-            {
-                2,
-                2,
-                3
-            },
-            {
-                4,
-                5,
-                6
-            },
-            {
-                4,
-                5,
-                6
-            }
-        };
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(Arrays.toString(randomInts(arr)));
+        String [][] arr = {{"hello", "hey","hi"},{"hello", "hey","hi"}};
+        int[][] nums = {{1,2,3},
+                        {4,5,6},
+                        {7,8,9}};
+        randomInts(nums);
+        for(int i = 0; i < nums.length; i++){
+            System.out.println(Arrays.toString(nums[i]));
         }
     }
     public static int sumOfRow(int[][] arr, int row) {
@@ -57,16 +45,18 @@ public class twoD_Array_Practice {
         return false;
     }
 
-    public static int[][] randomInts(int[][] arr) {
+    public static void randomInts(int[][] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[0].length; j++) {
                 arr[i][j] = (int)(10 * Math.random() + 1);
             }
         }
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(Arrays.toString(arr));
-        }
-        return arr;
     }
+    public static void frogurt(String [] [] arr) {
+        for (int i = 0; i < arr.length; i++) {
+                arr[i][2] = "frogurt";
+        }
+    }
+
 
 }
