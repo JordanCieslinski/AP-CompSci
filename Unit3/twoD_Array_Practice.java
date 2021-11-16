@@ -1,14 +1,16 @@
 import java.util.*;
 public class twoD_Array_Practice {
     public static void main(String[] args) {
-        String [][] arr = {{"hello", "hey","hi"},{"hello", "hey","hi"}};
+        String [][] arr = {{"bananaa", "banana","bananafot"},{"banana", "banana","banana"}};
         int[][] nums = {{1,2,3},
                         {4,5,6},
                         {7,8,9}};
-        randomInts(nums);
-        for(int i = 0; i < nums.length; i++){
-            System.out.println(Arrays.toString(nums[i]));
+        hashtag(arr, "#");
+        for(int i = 0; i < arr.length; i++){
+            System.out.println(Arrays.toString(arr[i]));
         }
+        System.out.println(sumOfDiag(nums));
+        
     }
     public static int sumOfRow(int[][] arr, int row) {
         int sum = 0;
@@ -56,6 +58,53 @@ public class twoD_Array_Practice {
         for (int i = 0; i < arr.length; i++) {
                 arr[i][2] = "frogurt";
         }
+    }
+    public static void hashtag(String [][] arr , String str){
+        for (int i = 0; i < arr.length; i++) {
+            for(int j = 0; j < arr[i].length; j+=2){
+                arr[i][j] = str;
+            }
+        
+    }
+    }
+
+    public static boolean isValidIndex(int [][] arr, int row, int column){
+        if(arr.length - row > 0 && arr[0].length - column > 0)
+            return true;
+        return false;
+    }
+    public static int fourCorners(int [][] arr) {
+        return arr[0][0] + arr[arr.length-1][0] +arr[0][arr[0].length-1] + arr[arr.length-1][arr[0].length-1];
+        
+    }
+    public static void midRow (int[][] arr){
+        for(int i =0; i < arr[arr.length/2].length; i++){
+            System.out.print(arr[arr.length/2][i] + " ");
+
+        }
+    }
+    public static boolean bananas(String[][] arr) {
+        boolean valid = false;
+        for(int i = 0; i < arr.length; i ++){
+            for(int j = 0; j < arr.length; j ++){
+                if(arr[i][j].indexOf("banana") != -1)
+                    valid = true;
+                else
+                    valid = false;
+            }
+        }
+        return valid;
+
+    }
+    public static int sumOfDiag(int[][] arr) {
+        int sum = 0;
+        int columns = 0;
+        int rows = arr.length;
+        for(int i = rows-1; i >= 0; i--){
+                sum+=arr[i][columns];
+                columns++;
+        }
+        return sum;
     }
 
 
