@@ -10,9 +10,9 @@ public class Picture extends SimplePicture
 {
     public static void main(String[] args) 
     {
-        Picture beach = new Picture("water.jpg");
+        Picture beach = new Picture("caterpiller.jpg");
         beach.explore();
-        beach.fixUnderWater();
+        beach.mirrorHorizontal();
         beach.explore();
 
         
@@ -87,12 +87,32 @@ public class Picture extends SimplePicture
 
     public void mirrorVertical()
     {
-
+        Pixel[][] pixels = getPixels2D();
+        Pixel leftPixel = null;
+        Pixel rightPixel = null;
+        //Complete the rest of the method below
+        //Hint: Use nested for loops
+        for (int i = 0; i < pixels.length; i ++){
+            for(int j = 0; j < pixels[i].length/2; j++){
+               pixels[i][pixels[i].length-j-1].setColor(pixels[i][j].getColor());
+                
+            }
+        }
     }
 
     public void mirrorHorizontal()
     {
-
+        Pixel[][] pixels = getPixels2D();
+        Pixel leftPixel = null;
+        Pixel rightPixel = null;
+        //Complete the rest of the method below
+        //Hint: Use nested for loops
+        for (int i = 0; i < pixels.length/2; i ++){
+            for(int j = 0; j < pixels[i].length; j++){
+               pixels[pixels.length-i-1][j].setColor(pixels[i][j].getColor());
+                
+            }
+        }
     }
 
     
