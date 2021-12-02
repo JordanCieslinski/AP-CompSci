@@ -1,3 +1,5 @@
+package PictureLab;
+
 import java.awt.Color;
 
 /**
