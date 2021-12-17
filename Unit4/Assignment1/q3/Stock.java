@@ -1,4 +1,4 @@
-package Assignment1;
+package Assignment1.q3;
 
 public class Stock {
     private String symbol;
@@ -9,6 +9,7 @@ public class Stock {
     public Stock(String theSymbol) {
         totalShares = 0;
         totalCost = 0;
+        symbol = theSymbol;
     }
 
     // Records purchase of the given shares
@@ -19,8 +20,8 @@ public class Stock {
 
     // Returns the total profit or loss earned on this stock, based
     // on the price per share
-    public double getProfit(double currentPrice) {
-        return (totalShares*currentPrice) - totalCost;
+    public double getProfit(double todayPrice) {
+        return (totalShares*todayPrice) - totalCost;
     }
 
     public String getSymbol() {

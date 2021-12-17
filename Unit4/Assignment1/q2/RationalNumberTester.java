@@ -1,4 +1,4 @@
-package Assignment1;
+package Assignment1.q2;
 
 public class RationalNumberTester {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Assignment1;
+package Assignment1.q1;
 
 public class Date {
     private int day;
