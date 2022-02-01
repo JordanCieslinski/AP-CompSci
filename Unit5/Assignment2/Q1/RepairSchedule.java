@@ -43,7 +43,7 @@ public class RepairSchedule {
             for(int j = 0; j < numberOfMechanics; j++){
                 if(i.getMechanicNum() != j){
                     availableMecs.add(j);
-                }
+                } //FIX FIX FIX FIX FIX FIX FIX FIX
             }
         }
         return availableMecs;
