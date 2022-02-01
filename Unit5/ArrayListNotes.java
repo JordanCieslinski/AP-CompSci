@@ -1,7 +1,11 @@
 import java.util.*;
 public class ArrayListNotes {
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<String>(); //size of list is 0
+        ArrayList list0 = new ArrayList(); //This creates an ArrayList which can store any data type
+        list0.add(1);
+        list0.add("Jackson");
+
+        ArrayList<String> list = new ArrayList<>(); //size of list is 0
         list.add("Chris"); //[Chris]
         list.add("Alyse"); //[Chris, Alyse]
         list.add("Madison"); // [Chris, Alyse, Madison]
