@@ -29,6 +29,7 @@ public class RepairSchedule {
             }
         }
         schedule.add(new CarRepair(m, b));
+
         return true;
 
     }
@@ -39,13 +40,23 @@ public class RepairSchedule {
     // 0 through 3
     public ArrayList<Integer> availableMechanics() {
         ArrayList<Integer> availableMecs = new ArrayList<>();
-        for(CarRepair i: schedule){
-            for(int j = 0; j < numberOfMechanics; j++){
-                if(i.getMechanicNum() != j){
-                    availableMecs.add(j);
-                } //FIX FIX FIX FIX FIX FIX FIX FIX
+        ArrayList<Integer> usedMecs = new ArrayList<>();
+        boolean valid = false;
+        for(CarRepair a: schedule){
+            for(int i = 0; i < numberOfMechanics; i++){
+                if(a.getMechanicNum() == i){
+                    usedMecs.add(i);
+                }
             }
         }
+
+        for(int i =0; i < numberOfMechanics; i++){
+            if(!usedMecs.contains(i)){
+                availableMecs.add(i);
+            }
+        }
+
+        
         return availableMecs;
     }
 
@@ -54,18 +65,18 @@ public class RepairSchedule {
      * b represents the bay number that the car is being removed from.
      */
     public void carOut(int b) {
-        for(int i = 0; i < schedule.size(); i++){
-            if(schedule.get(i).getBayNum() == b){
+        for (int i = 0; i < schedule.size(); i++) {
+            if (schedule.get(i).getBayNum() == b) {
                 schedule.remove(i);
                 i--;
             }
         }
     }
 
-    public String toString(){
+    public String toString() {
         String s = "";
-        for(CarRepair i: schedule){
-            s = s+i+"\n";
+        for (CarRepair i : schedule) {
+            s = s + i + "\n";
         }
         return s;
     }

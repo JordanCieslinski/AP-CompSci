@@ -40,7 +40,7 @@ public class PuzzleBook {
         for(int i = 0; i < puzzles.size(); i++){
             System.out.println("PUZZLE "+(i+1)+":");
             puzzles.get(i).printCrossWords();
-            System.out.println("-------------------------------------");
+            System.out.println("------------------------------------------");
         }
     }
 }
