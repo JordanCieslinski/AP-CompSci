@@ -1,4 +1,5 @@
 package Assignment2.Q3;
+
 import java.util.*;
 
 public class UniqueStringList {
@@ -33,10 +34,9 @@ public class UniqueStringList {
 
     // returns the string at the specified index, if it is out of bounds return null
     public String get(int index) {
-        if(index >= 0 && index < size()){
+        if (index >= 0 && index < size()) {
             return strings.get(index);
-        }
-        else
+        } else
             return null;
     }
 
@@ -44,19 +44,26 @@ public class UniqueStringList {
     // For example, if isCaseSensitive is true, then both a and b need to be
     // identical
     public boolean stringEqual(String a, String b) {
-        if(isCaseSensitive == true){
+        if (isCaseSensitive == true) {
             return a.equals(b);
-        }
-        else
+        } else
             return a.equalsIgnoreCase(b);
     }
 
     // returns true if the string is in the ArrayList
     public boolean contains(String s) {
-        for(String a: strings){
-            if(a.equals(s)){
-                return true;
+        for (String a : strings) {
+            if (isCaseSensitive) {
+                if (a.equals(s)) {
+                    return true;
+                }
+            } 
+            else {
+                if (a.equalsIgnoreCase(s)) {
+                    return true;
+                }
             }
+
         }
         return false;
     }
@@ -64,25 +71,24 @@ public class UniqueStringList {
     // if the string already exists in the ArrayList then don't add it, and
     // return false. If it's not in there already, then add it and return true
     public boolean add(String s) {
-        if(contains(s) == false){
+        if (contains(s) == false) {
             strings.add(s);
             return true;
-        }
-        else
+        } else
             return false;
-            
+
     }
 
     // remove the specified string from the ArrayList, if it's not in
     // the array list, then don't do anything
     public void remove(String s) {
-        while(contains(s)){
+        while (contains(s)) {
             strings.remove(s);
         }
     }
 
     // returns the ArrayList as a string
     public String toString() {
-        return strings+"";
+        return strings + "";
     }
 }
