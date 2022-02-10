@@ -38,7 +38,6 @@ public class Activity {
     // Returns a string containing the event and information about it
     // Example: Stevie’s Pool Party – Champion Hills (12 PM)
     public String toString() {
-        String s = "";
         return name+" - "+loc+" ("+t+")";
     }
 }

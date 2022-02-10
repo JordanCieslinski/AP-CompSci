@@ -1,4 +1,4 @@
-package Assignment3;
+package Assignment3.Q3;
 
 public class BabyName 
 {

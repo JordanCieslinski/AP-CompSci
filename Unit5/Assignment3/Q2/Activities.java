@@ -60,6 +60,10 @@ public class Activities {
     //2) Arctic Monkeys Concert – Blue Cross Arena (11 PM)
 
     public String toString() {
-        return ""; //NEED TO STILL DO THIS 
+        String s = "";
+        for (int i = 0; i < act.size(); i++) {
+            s+=(i+1)+") "+act.get(i)+"\n";
+        }
+        return s;
     }
 }
