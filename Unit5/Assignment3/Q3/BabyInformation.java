@@ -104,9 +104,9 @@ public class BabyInformation {
         String [][] s = new String[row][col];
         for (int i = 0; i < s.length; i++) {
             for (int j = 0; j < s[i].length; j++) {
-                s[i][j] = "";
+                s[i][j] = names.get((int)(names.size()*Math.random())).getName();
             }
         }
-        return s; //NOT DONE, NEED TO CHOOSE RANDOM NAMES
+        return s; 
     }
 }
