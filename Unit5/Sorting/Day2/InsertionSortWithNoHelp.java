@@ -28,7 +28,24 @@ public class InsertionSortWithNoHelp {
      * Insertion sort takes in an array of integers and
      * returns a sorted array of the same integers.
      */
-    public static void insertionSort(int[] arr) {
-        
+    public static int[] insertionSort(int[] arr) {
+        int temp = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+
+                for (int j = 0; j < i; j++) {
+                    if (arr[i] < arr[j]) {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+        }
+
+        return arr;
     }
 }

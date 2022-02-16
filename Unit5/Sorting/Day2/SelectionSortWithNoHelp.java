@@ -39,17 +39,19 @@ public class SelectionSortWithNoHelp {
      */
     // 6, 2 , 1, 7, 3
     public static int[] selectionSort(int[] arr) {
-        int currentLow = 0;
         int temp = 0;
-        for(int i = 1; i < arr.length; i++){
-            if(arr[i] < arr[currentLow]){
-                temp = arr[i];
-                arr[i] = arr[currentLow];
-                arr[currentLow] = temp;
-                currentLow = i;
-
+        for (int i = 0; i < arr.length; i++) {
+            int min = i;
+            for (int j = i; j < arr.length; j++) {
+                if (arr[j] < arr[min]) {
+                    min = j;
+                }
             }
+            temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
         }
+
         return arr;
     }
 }
