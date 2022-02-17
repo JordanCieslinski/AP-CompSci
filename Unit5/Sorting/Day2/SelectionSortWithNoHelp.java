@@ -47,9 +47,11 @@ public class SelectionSortWithNoHelp {
                     min = j;
                 }
             }
-            temp = arr[i];
-            arr[i] = arr[min];
-            arr[min] = temp;
+            if (min != i) {
+                temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp;
+            }
         }
 
         return arr;
