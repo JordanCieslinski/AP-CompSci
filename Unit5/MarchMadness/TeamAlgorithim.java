@@ -10,7 +10,7 @@ public class TeamAlgorithim {
     private ArrayList<Team> teams;
     private Scanner inputFile;
 
-    public TeamAlgorithim(){
+    public TeamAlgorithim() throws FileNotFoundExeption{
         teams = new ArrayList<>(); 
         inputFile = new Scanner(new File(System.getProperty("user.dir") + "\\Unit5\\MarchMadness\\teams.txt"));
     }
