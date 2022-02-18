@@ -4,8 +4,6 @@ package MarchMadness;
 import java.io.*;
 import java.util.*;
 
-@SuppressWarnings("unused")
-
 public class TeamAlgorithim {
     private ArrayList<Team> teams;
     private Scanner inputFile;

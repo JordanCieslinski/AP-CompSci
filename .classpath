@@ -9,7 +9,5 @@
 	<classpathentry kind="src" path="Unit3"/>
 	<classpathentry kind="src" path="Unit4"/>
 	<classpathentry kind="src" path="Unit5"/>
-	<classpathentry kind="src" path="March Madness"/>
-	<classpathentry kind="src" path="MarchMadness"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
