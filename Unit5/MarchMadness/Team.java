@@ -4,7 +4,7 @@ public class Team {
     private String name;
     private int seed;
 
-    public Team(String n, int s) {
+    public Team(int s, String n) {
         name = n;
         seed = s;
     }
@@ -15,5 +15,8 @@ public class Team {
 
     public int getSeed() {
         return seed;
+    }
+    public String toString(){
+        return seed+" "+name;
     }
 }
