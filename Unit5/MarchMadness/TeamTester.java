@@ -5,36 +5,33 @@ import java.util.*;
 
 public class TeamTester {
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner inputFile = new Scanner(new File(System.getProperty("user.dir")+"\\Unit5\\MarchMadness\\teams.txt"));
+        Scanner inputFile = new Scanner(new File(System.getProperty("user.dir") + "\\Unit5\\MarchMadness\\teams.txt"));
         ArrayList<Team> teams = new ArrayList<>();
-        while(inputFile.hasNextLine()){
+        while (inputFile.hasNextLine()) {
             teams.add(new Team(inputFile.nextInt(), inputFile.nextLine()));
         }
         int count = 0;
-        for(int i = 0; i < teams.size(); i ++){
-            teams.remove(likeliness(teams.get(i), teams.get(i+1)));
+        for (int j = 0; j < teams.size(); j++) {
+            for (int i = 0; i < teams.size(); i++) {
+                teams.remove(pickALoser(teams.get(i), teams.get(i + 1)));
+            }
+            
         }
+
         System.out.println(teams);
     }
 
-    public static Team likeliness(Team a, Team b){
-        int better = Math.min(a.getSeed(), b.getSeed());
-        int worse = Math.max(a.getSeed(), b.getSeed());
-        
-        int dif = worse-better;
+    public static Team pickALoser(Team a, Team b) {
 
-        double betterChance = 50;
+        int dif = (Math.abs(a.getSeed() - b.getSeed())) * 5;
 
-        betterChance += dif/2;
+        double chance = 50 + (dif / 2);
+        double pickALoser = Math.random() * 101;
 
-        double pickALoser = Math.random()*101;
-
-        if(pickALoser >= betterChance)
+        if (pickALoser >= chance)
             return b; // this case, "a" wins "b" loses, so return b to remove it
         else
             return a; // this case, "b" wins "a" loses, so return a to remove it
-        
-        
-        
+
     }
 }
