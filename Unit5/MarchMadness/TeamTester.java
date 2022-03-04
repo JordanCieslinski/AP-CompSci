@@ -21,7 +21,8 @@ public class TeamTester {
     private static Graphics g = frame.getGraphics();
     private static Image bracket = frame
             .loadImage(System.getProperty("user.dir") + "\\Unit5\\MarchMadness\\bracket.png");
-
+    private static int x = 0;        
+    private static double roundEq = ((3*Math.pow(10,-14))*Math.pow(x,6))+(.0012*Math.pow(x, 5))+(-.0525*Math.pow(x,4))+(.7814*Math.pow(x, 3))+(-4.74*Math.pow(x, 2))+(3.8389*x)+99.385;
     public static void main(String[] args) throws FileNotFoundException {
         Scanner inputFile = new Scanner(new File(System.getProperty("user.dir") + "\\Unit5\\MarchMadness\\teams.txt"));
         ArrayList<Team> teams = new ArrayList<>();
@@ -34,7 +35,7 @@ public class TeamTester {
         g.setColor(Color.BLACK);
 
         for (int j = 0; j <= intRound; j++) {
-
+            x = j;
             for (int i = 0; i < teams.size(); i++) {
                 if (i < teams.size() / 2) {
                     g.drawString(teams.get(i).toString(), xPos1, yPos1);
@@ -60,7 +61,7 @@ public class TeamTester {
     public static Team pickALoser(Team a, Team b) {
 
         int dif = (Math.abs(a.getSeed() - b.getSeed())) * 6; // 1 - 16
-
+        
         double chance = 50 + (dif / 2);
         double pickALoser = Math.random() * 101;
 
@@ -78,12 +79,14 @@ public class TeamTester {
         switch (round) {
             case "1st round":
                 round = "2nd round";
+                roundEq = (0.0014*Math.pow(x, 6)) - (0.0679*Math.pow(x, 5)) + (1.2844*Math.pow(x, 4)) - (11.531*Math.pow(x, 3)) + (50.713*Math.pow(x, 2)) - (107.83*x) + 153.23;
                 xPos1 = 295;
                 xPos2 = 1410;
                 yPos1 = yPos2 = 70;
                 jumps = 52;
                 break;
             case "2nd round":
+                roundEq = (0.0019*Math.pow(x, 6)) + (0.0983*Math.pow(x, 5)) - (1.9561*Math.pow(x, 4)) + (18.192*Math.pow(x, 3)) - (78.402*Math.pow(x, 2)) + (127.89*x) + 14.623;
                 xPos1 = 420;
                 xPos2 = 1305;
                 yPos1 = yPos2 = 95;
@@ -91,6 +94,7 @@ public class TeamTester {
                 round = "Sweet 16";
                 break;
             case "Sweet 16":
+                roundEq = (0.0006*Math.pow(x, 6)) - (0.0292*Math.pow(x, 5)) + (.5682*Math.pow(x, 4)) - (5.3596*Math.pow(x, 3)) + (24.507*Math.pow(x, 2)) - (49.641*x) + 86.205;
                 xPos1 = 545;
                 xPos2 = 1180;
                 yPos1 = yPos2 = 145;
@@ -98,6 +102,7 @@ public class TeamTester {
                 round = "Elite Eight";
                 break;
             case "Elite Eight":
+                roundEq = (-.0002*Math.pow(x, 6)) + (0.0069*Math.pow(x, 5)) - (.0064*Math.pow(x, 4)) - (1.3804*Math.pow(x, 3)) + (13.601*Math.pow(x, 2)) - (45.182*x) + 94.187;
                 xPos1 = 680;
                 xPos2 = 1050;
                 yPos1 = yPos2 = 250;
@@ -105,12 +110,12 @@ public class TeamTester {
                 round = "Final Four";
                 break;
             case "Final Four":
+                roundEq = (-3*Math.pow(10, -5)*Math.pow(x, 6)) - (0.0062*Math.pow(x, 5)) + (.3182*Math.pow(x, 4)) - (5.3773*Math.pow(x, 3)) + (38.717*Math.pow(x, 2)) - (117.4*x) + 151.86;
                 xPos1 = 810;
                 xPos2 = 900;
                 yPos1 = 355;
                 yPos2 = 560;
                 jumps = 832;
-                round = "Final Four";
                 round = "Championship";
                 break;
             case "Championship":
