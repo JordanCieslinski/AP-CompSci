@@ -14,7 +14,7 @@ public class TeamTester {
     private static int yPos2 = 55;
     private static int jumps = 26;
 
-    private static Font font1 = new Font("Impact", Font.BOLD, 10);
+    private static Font font1 = new Font("Impact", Font.BOLD, 13);
     private static Font font2 = new Font("Impact", Font.BOLD, 30);
 
     private static DrawingPanel frame = new DrawingPanel(1920, 1080);
