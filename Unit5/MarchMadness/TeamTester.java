@@ -22,6 +22,8 @@ public class TeamTester {
     private static Image bracket = frame
             .loadImage(System.getProperty("user.dir") + "\\Unit5\\MarchMadness\\bracket.png");
 
+    private static double roundEq = 0;
+
     public static void main(String[] args) throws FileNotFoundException {
         Scanner inputFile = new Scanner(new File(System.getProperty("user.dir") + "\\Unit5\\MarchMadness\\teams.txt"));
         ArrayList<Team> teams = new ArrayList<>();
@@ -34,7 +36,6 @@ public class TeamTester {
         g.setColor(Color.BLACK);
 
         for (int j = 0; j <= intRound; j++) {
-
             for (int i = 0; i < teams.size(); i++) {
                 if (i < teams.size() / 2) {
                     g.drawString(teams.get(i).toString(), xPos1, yPos1);
@@ -45,12 +46,14 @@ public class TeamTester {
                 }
             }
             if (teams.size() != 1) {
-                for (int i = 0; i < teams.size(); i++) {
-                    teams.remove(pickALoser(teams.get(i), teams.get(i + 1)));
+                for (int i = 1; i < teams.size(); i++) {
+                    teams.remove(polyAlgorithim(teams.get(i - 1), teams.get(i)));
                 }
+
             }
 
             roundUpdate();
+            System.out.println(teams);
 
         }
 
@@ -65,13 +68,33 @@ public class TeamTester {
         double pickALoser = Math.random() * 101;
 
         if (chance >= pickALoser) {
-            // System.out.println(a + " beats "+b);
             return b; // this case, "a" wins "b" loses, so return b to remove it
         } else {
-            // System.out.println(b + " beat "+a);
             return a; // this case, "b" wins "a" loses, so return a to remove it
         }
 
+    }
+
+    public static Team polyAlgorithim(Team a, Team b) {
+        // int betterTeam = Math.min(a.getSeed(), b.getSeed());
+        double teamAChance = eqUpdate(a.getSeed());
+        double teamBChance = eqUpdate(b.getSeed());
+
+        if (Math.random() * 101 < teamAChance) { // TeamA is predicted to win
+            if (Math.random() * 101 < teamBChance) // AB
+                pickALoser(a, b);
+            else
+                return b; // A !B
+
+        } else if (Math.random() * 101 > teamAChance) { // Math.random() * 101 > teamAChance, meaning TeamA is predicted
+                                                        // to not win
+            if (Math.random() * 101 > teamBChance) { // !A B
+                return a;
+            } else
+                return pickALoser(a, b);
+
+        }
+        return pickALoser(a, b);
     }
 
     public static void roundUpdate() {
@@ -110,7 +133,6 @@ public class TeamTester {
                 yPos1 = 355;
                 yPos2 = 560;
                 jumps = 832;
-                round = "Final Four";
                 round = "Championship";
                 break;
             case "Championship":
@@ -120,5 +142,49 @@ public class TeamTester {
 
         }
 
+    }
+
+    public static double eqUpdate(int x) {
+        switch (round) {
+            case "1st round":
+                roundEq = (0.00123640549338355 * Math.pow(x, 5))
+                        + (-0.0525472334687695 * Math.pow(x, 4)) + (0.781416210217481 * Math.pow(x, 3))
+                        + (-4.73996288805966 * Math.pow(x, 2)) + (3.83886441232032 * x)
+                        + 99.384615385543;
+                break;
+            case "2nd round":
+                roundEq = (0.00136416408595741 * Math.pow(x, 6)) + (-0.0679335853396106 * Math.pow(x, 5))
+                        + (1.28435589746881 * Math.pow(x, 4))
+                        + (-11.531137118493 * Math.pow(x, 3)) + (50.7128361060342 * Math.pow(x, 2))
+                        + (-107.829974824467 * x) + 153.225961523057;
+                break;
+            case "Sweet 16":
+                roundEq = (-0.00187349501095757 * Math.pow(x, 6)) + (0.0983445462644705 * Math.pow(x, 5))
+                        + (-1.95606675419287 * Math.pow(x, 4))
+                        + (18.191523268583 * Math.pow(x, 3)) + (-78.4022049713164 * Math.pow(x, 2))
+                        + (127.88528091031 * x) + 14.6230770074505;
+                break;
+            case "Elite Eight":
+                roundEq = (0.000580710353994929 * Math.pow(x, 6)) + (-0.0291731662133495 * Math.pow(x, 5))
+                        + (0.568202415584274 * Math.pow(x, 4))
+                        + (-5.35962108708016 * Math.pow(x, 3)) + (24.5067854458327 * Math.pow(x, 2))
+                        + (-49.6406144992114 * x) + 86.2048076801088;
+                break;
+            case "Final Four":
+                roundEq = (-0.000239078087344864 * Math.pow(x, 6)) + (0.00689707866795823 * Math.pow(x, 5))
+                        + (-0.00644581378739478 * Math.pow(x, 4))
+                        + (-1.38041200314272 * Math.pow(x, 3)) + (13.6007251408599 * Math.pow(x, 2))
+                        + (-45.1822185864554 * x) + 94.1865384651134;
+                break;
+            case "Championship":
+                roundEq = (-0.0000328947369929583 * Math.pow(x, 6)) + (-0.00616600181799951 * Math.pow(x, 5))
+                        + (0.318215646425281 * Math.pow(x, 4)) + (-5.37727955908251 * Math.pow(x, 3))
+                        + (38.7171679195532 * Math.pow(x, 2)) + (-117.402018222903 * x)
+                        + 151.856730759949;
+        }
+        if (roundEq < 0)
+            return 0.0;
+        else
+            return roundEq;
     }
 }
