@@ -44,6 +44,7 @@ public class TeamTester {
                     g.drawString(teams.get(i).toString(), xPos2, yPos2);
                     yPos2 += jumps;
                 }
+                frame.sleep(100+(100*j));
             }
             if (teams.size() != 1) {
                 for (int i = 1; i < teams.size(); i++) {
@@ -51,7 +52,7 @@ public class TeamTester {
                 }
 
             }
-
+            frame.sleep(1000);
             roundUpdate();
             System.out.println(teams);
 
