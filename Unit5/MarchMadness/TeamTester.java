@@ -25,7 +25,7 @@ public class TeamTester {
     private static double roundEq = 0;
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner inputFile = new Scanner(new File(System.getProperty("user.dir") + "\\Unit5\\MarchMadness\\teams.txt"));
+        Scanner inputFile = new Scanner(new File(System.getProperty("user.dir") + "\\Unit5\\MarchMadness\\2022teams.txt"));
         ArrayList<Team> teams = new ArrayList<>();
         while (inputFile.hasNextLine()) {
             teams.add(new Team(inputFile.nextInt(), inputFile.nextLine()));
