@@ -9,5 +9,9 @@
 	<classpathentry kind="src" path="Unit3"/>
 	<classpathentry kind="src" path="Unit4"/>
 	<classpathentry kind="src" path="Unit5"/>
+	<classpathentry kind="src" path="Unit6/Day 1 - Inheritance Notes"/>
+	<classpathentry kind="src" path="Unit6/Day2 Warmup"/>
+	<classpathentry excluding="Day 1 - Inheritance Notes/|Day2 Warmup/" kind="src" path="Unit6"/>
+	<classpathentry kind="src" path="Testing"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
