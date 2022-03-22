@@ -1,0 +1,40 @@
+Unit 6: Inheritance Review
+
+Superclass (Parent Class) ------->   Subclass (Child Class)
+
+ex) Post (superclass) -----> MessagePost (subclass)
+
+public class MessagePost extends Post
+
+How to verify if a class is a good subclass?  "is-a"
+
+Constructors:
+-> "Parent comes first"
+-> The first call in the constructor must be super which directly calls the
+parent class
+-> If no super call is made, java will try to call the default constructor,
+aka super()
+-> After you create the Parent Class then you would set the fields for
+the subclass
+
+Methods in the Subclass:
+-> If you are in a method called roll() but you want to access the roll()
+method from the superclass you would then say super.roll()
+
+Object Class:
+-> Every class extends the Object Class (Java does this for you)
+-> toString() and equals() methods come from this class and if you don't change
+them then they will be referencing where the object is in memory.
+
+Polymorphism:
+Hero app = new Superhero("Batman", 50);
+**You are allowed to declare a variable of the superclass but instantiate it as the subclass**
+
+Remember: At compile time you are a Hero, but at runtime you are a Superhero
+
+
+ex) app.powerUp(20);
+**You need to make sure powerUp is in the Hero class to compile, but when the program runs, it calls the method from Superhero
+
+**if powerUp is not in the Hero class, but it is in Superhero, we can downcast the object.
+((Superhero)app).powerUp(20);
