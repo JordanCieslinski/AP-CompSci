@@ -37,7 +37,7 @@ public class CheckingAccount extends BankAccount {
     public void deposit(double amount) {
 
         transactionCount++;
-        deposit(amount);
+        super.deposit(amount);
 
     }
 
@@ -51,6 +51,7 @@ public class CheckingAccount extends BankAccount {
 
         transactionCount++;
         super.withdraw(amount);
+        
 
     }
 
@@ -61,7 +62,7 @@ public class CheckingAccount extends BankAccount {
      * FREE_TRANSACTIONS from the bank account
      */
     public void deductFees() {
-        for(int i = transactionCount; i > FREE_TRANSACTIONS; i--){
+        for (int i = transactionCount; i > FREE_TRANSACTIONS; i--) {
             this.withdraw(TRANSACTION_FEE);
         }
         transactionCount = 0;

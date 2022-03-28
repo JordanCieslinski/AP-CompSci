@@ -36,7 +36,7 @@ public class SavingsAccount extends BankAccount
    */
    public void addInterest()   
    {
-        deposit(interestRate*getBalance());
+        deposit((interestRate/100)*getBalance());
    }
    
    /** 
@@ -47,7 +47,7 @@ public class SavingsAccount extends BankAccount
     public void withdraw(double amount)  
     {
       if(getBalance()- amount > MINIMUM_BALANCE)
-        withdraw(amount);
+        super.withdraw(amount);
     }
 
    
