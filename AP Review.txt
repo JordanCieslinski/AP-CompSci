@@ -38,3 +38,94 @@ ex) app.powerUp(20);
 
 **if powerUp is not in the Hero class, but it is in Superhero, we can downcast the object.
 ((Superhero)app).powerUp(20);
+
+
+
+
+2D Arrays:
+    String [][] arr  = new String[4][3]; ==> 4 rows, 3 columns
+    arr.length --> gives you the number of rows
+    arr[0].length --> gives you the number of columns
+
+    Looping through a 2D array:
+        for(int i = 0; i < arr.length; i++){
+            for(int j = 0; j < arr[i].length; i++){
+                System.out.println(arr[i][j]);
+            }
+        }
+
+    Using Enhanced For Loops:
+        for(String[] i: arr){
+            for(String j: i){
+                System.out.println(j);
+            }
+        }
+    Major setbacks of enhanced forloops:
+    1) You cannot update an array
+    2) It must go through the whole array, you cannot stop it
+
+
+ArrayLists                                vs.              Arrays
+ArrayList<Integer> list                               int[] list
+list.get(i)                                                      list[i]
+list.size()                                                      list.length
+
+Comparing Consecutive Elements:
+for(int i = 0; i < list.size() - 1; i++){
+    if(list.get(i).equals(list.get(i+1))
+}
+or
+
+for(int i = 0; i < list.size() - 1; i++){
+    if(list[i].equals(list.get[i+1])
+}
+
+
+**If you remove an element from an ArrayList you must either have your for loop go backwards:
+for(int i = list.size() - 1; i >= 0; i--)
+
+or
+
+you must update i so that no element is skipped
+
+
+
+
+
+Classes:
+    1) Fields - they must be private(for exam)
+    2) Methods:
+        a) Constructors: sets the fields (Same name as class and no return type)
+        **If you have a field that is an Array, ArrayList, or a 2D Array, you must instantiate the field in constructor
+        b) Mutator: Updates the fields
+        c) Accessor: Access the fields
+
+    ex)  Public class Dog{
+
+        private ArrayList<Integer> weightGain;
+        private name first;
+
+
+        public Dog(Name m){
+            first = name;
+            weightGain = new ArrayList<>();
+        }
+
+        public static void total(){ }
+
+        public void speak(){ }
+
+
+    }   
+
+    In a client class(this Class contains main method),
+    Name x = new Name("Tammy");
+    Dog fido = new Dog(x);
+    Dog.total();
+    fido.speak();
+
+    When determining subclasses vs fields:
+        If there "is-a" relationship then the class should be a subclass
+            ex) a square "is-a" polygon
+        If there is a "has-a" relationship, then it should be a field
+            ex) a car "has-a" door, so the Door class should be a field
