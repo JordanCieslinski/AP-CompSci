@@ -129,3 +129,34 @@ Classes:
             ex) a square "is-a" polygon
         If there is a "has-a" relationship, then it should be a field
             ex) a car "has-a" door, so the Door class should be a field
+
+
+String Class:
+    1) Use the equals method when comparing Strings no ==
+    2) compareTo() method:
+        ex) "apple".compareTo("banana) --> returns a negative # bc a comes before b
+            "cat".compareToO("apple") --> reutrns a postive #
+
+    3) indexOf() method:
+        ex) "tammy".indexOf("m") --> returns 2, the first instance of made
+            "tarkav".indexOf("tom") --> returns -1
+
+Searching and Sorting:
+    1) Linear Search: Starts at the beginning and looks for specific value
+
+    2) Binary Search: "Guessing Game : Too High, too low, etc"
+        -The array must be sorted
+        -Checks the middle element every single time, until there are no more Elements
+
+    3) Selection Sort: Searches for the smallest element and then swaps them
+        ex) [5,2,1,4] after on iteration it is [1,2,5,4]
+
+    4) Insertion Sort: Inserts the very next number into the proper spot
+        ex) [5,2,1,4] after one iteration it is [2,5,1,4]
+
+Order of Operations:
+    1) Casting takes precendence over div, add, mult, sub
+        ex) (double)7 / 2 --> 3.5 bc 7 becomes a double first
+    2) Modulus (%), divison and mult are all on the same level
+        -mod by 10 --> gets you the last digit
+        -divide by 10 --> removes the last digit
