@@ -13,5 +13,6 @@
 	<classpathentry kind="src" path="Unit6/Day2 Warmup"/>
 	<classpathentry excluding="Day 1 - Inheritance Notes/|Day2 Warmup/" kind="src" path="Unit6"/>
 	<classpathentry kind="src" path="Testing"/>
+	<classpathentry kind="src" path="Final Project Student Notes"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
