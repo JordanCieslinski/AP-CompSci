@@ -1,0 +1,162 @@
+Unit 6: Inheritance Review
+
+Superclass (Parent Class) ------->   Subclass (Child Class)
+
+ex) Post (superclass) -----> MessagePost (subclass)
+
+public class MessagePost extends Post
+
+How to verify if a class is a good subclass?  "is-a"
+
+Constructors:
+-> "Parent comes first"
+-> The first call in the constructor must be super which directly calls the
+parent class
+-> If no super call is made, java will try to call the default constructor,
+aka super()
+-> After you create the Parent Class then you would set the fields for
+the subclass
+
+Methods in the Subclass:
+-> If you are in a method called roll() but you want to access the roll()
+method from the superclass you would then say super.roll()
+
+Object Class:
+-> Every class extends the Object Class (Java does this for you)
+-> toString() and equals() methods come from this class and if you don't change
+them then they will be referencing where the object is in memory.
+
+Polymorphism:
+Hero app = new Superhero("Batman", 50);
+**You are allowed to declare a variable of the superclass but instantiate it as the subclass**
+
+Remember: At compile time you are a Hero, but at runtime you are a Superhero
+
+
+ex) app.powerUp(20);
+**You need to make sure powerUp is in the Hero class to compile, but when the program runs, it calls the method from Superhero
+
+**if powerUp is not in the Hero class, but it is in Superhero, we can downcast the object.
+((Superhero)app).powerUp(20);
+
+
+
+
+2D Arrays:
+    String [][] arr  = new String[4][3]; ==> 4 rows, 3 columns
+    arr.length --> gives you the number of rows
+    arr[0].length --> gives you the number of columns
+
+    Looping through a 2D array:
+        for(int i = 0; i < arr.length; i++){
+            for(int j = 0; j < arr[i].length; i++){
+                System.out.println(arr[i][j]);
+            }
+        }
+
+    Using Enhanced For Loops:
+        for(String[] i: arr){
+            for(String j: i){
+                System.out.println(j);
+            }
+        }
+    Major setbacks of enhanced forloops:
+    1) You cannot update an array
+    2) It must go through the whole array, you cannot stop it
+
+
+ArrayLists                                vs.              Arrays
+ArrayList<Integer> list                               int[] list
+list.get(i)                                                      list[i]
+list.size()                                                      list.length
+
+Comparing Consecutive Elements:
+for(int i = 0; i < list.size() - 1; i++){
+    if(list.get(i).equals(list.get(i+1))
+}
+or
+
+for(int i = 0; i < list.size() - 1; i++){
+    if(list[i].equals(list.get[i+1])
+}
+
+
+**If you remove an element from an ArrayList you must either have your for loop go backwards:
+for(int i = list.size() - 1; i >= 0; i--)
+
+or
+
+you must update i so that no element is skipped
+
+
+
+
+
+Classes:
+    1) Fields - they must be private(for exam)
+    2) Methods:
+        a) Constructors: sets the fields (Same name as class and no return type)
+        **If you have a field that is an Array, ArrayList, or a 2D Array, you must instantiate the field in constructor
+        b) Mutator: Updates the fields
+        c) Accessor: Access the fields
+
+    ex)  Public class Dog{
+
+        private ArrayList<Integer> weightGain;
+        private name first;
+
+
+        public Dog(Name m){
+            first = name;
+            weightGain = new ArrayList<>();
+        }
+
+        public static void total(){ }
+
+        public void speak(){ }
+
+
+    }   
+
+    In a client class(this Class contains main method),
+    Name x = new Name("Tammy");
+    Dog fido = new Dog(x);
+    Dog.total();
+    fido.speak();
+
+    When determining subclasses vs fields:
+        If there "is-a" relationship then the class should be a subclass
+            ex) a square "is-a" polygon
+        If there is a "has-a" relationship, then it should be a field
+            ex) a car "has-a" door, so the Door class should be a field
+
+
+String Class:
+    1) Use the equals method when comparing Strings no ==
+    2) compareTo() method:
+        ex) "apple".compareTo("banana) --> returns a negative # bc a comes before b
+            "cat".compareToO("apple") --> reutrns a postive #
+
+    3) indexOf() method:
+        ex) "tammy".indexOf("m") --> returns 2, the first instance of made
+            "tarkav".indexOf("tom") --> returns -1
+
+Searching and Sorting:
+    1) Linear Search: Starts at the beginning and looks for specific value
+
+    2) Binary Search: "Guessing Game : Too High, too low, etc"
+        -The array must be sorted
+        -Checks the middle element every single time, until there are no more Elements
+
+    3) Selection Sort: Searches for the smallest element and then swaps them
+        ex) [5,2,1,4] after on iteration it is [1,2,5,4]
+
+    4) Insertion Sort: Inserts the very next number into the proper spot
+        ex) [5,2,1,4] after one iteration it is [2,5,1,4]
+
+Order of Operations:
+    1) Casting takes precendence over div, add, mult, sub
+        ex) (double)7 / 2 --> 3.5 bc 7 becomes a double first
+    2) Modulus (%), divison and mult are all on the same level
+        -mod by 10 --> gets you the last digit
+        -divide by 10 --> removes the last digit

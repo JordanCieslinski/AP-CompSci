@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="Unit2"/>
+	<classpathentry kind="src" path="Unit3"/>
+	<classpathentry kind="src" path="Unit4"/>
+	<classpathentry kind="src" path="Unit5"/>
+	<classpathentry kind="src" path="Unit6/Day 1 - Inheritance Notes"/>
+	<classpathentry kind="src" path="Unit6/Day2 Warmup"/>
+	<classpathentry excluding="Day 1 - Inheritance Notes/|Day2 Warmup/" kind="src" path="Unit6"/>
+	<classpathentry kind="src" path="Testing"/>
+	<classpathentry kind="src" path="Final Project Student Notes"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
